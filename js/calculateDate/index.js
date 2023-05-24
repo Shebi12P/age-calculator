@@ -18,13 +18,19 @@ export const calculateDate = () => {
     let monthDifference = getMonthDifference(inputMonth);
     let dayDifference = getDayDifference(inputDay);
 
+
     if (monthDifference < 0) {
         yearDifference = yearDifference - 1;
         monthDifference = monthDifference + 12;
     }
 
-    if (dayDifference < 0) {
-        monthDifference -= 1;
+    if (dayDifference < 0 && monthDifference > 0) {
+        monthDifference = monthDifference - 1;
+        dayDifference = getDaysToMonthEnd(inputMonth, inputDay) + currentDay;
+    }
+
+    if (dayDifference < 0 && monthDifference <= 0) {
+        yearDifference = yearDifference - 1;
         dayDifference = getDaysToMonthEnd(inputMonth, inputDay) + currentDay;
     }
 
