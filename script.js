@@ -1,59 +1,19 @@
-const isLeapYear = (year) => {
-    if (year % 4 === 0 && year % 100 === 0 && year % 400 === 0) {
-        return true;
-    }
+import { getCurrentDate } from "./js/calculateDate/getCurrentDate.js";
+import { getDayDifference } from "./js/calculateDate/getDayDifference.js";
+import { getDaysToMonthEnd } from "./js/calculateDate/getDaysToMonthend.js";
+import { getMonthDifference } from "./js/calculateDate/getMonthDifference.js";
+import { getYearDifference } from "./js/calculateDate/getYearDifference.js";
 
-    return false;
-}
 
-const getCurrentDate = () => {
-    const currentDate = new Date;
-
-    return currentDate;
-}
-
-const getYearDifference = (year) => {
-    const currentYear = getCurrentDate().getFullYear();
-    const yearDifference = currentYear - year;
-    
-    return currentYear - year;
-}
-
-const getMonthDifference = (month) => {
-    const MONTHS_IN_YEAR = 12;
-    const currentMonth = getCurrentDate().getMonth() + 1;
-    
-    const monthDifference = (currentMonth - month) % MONTHS_IN_YEAR;
-    
-    return monthDifference;
-}
-
-const getDayDifference = (day) => {
-    const currentDay = getCurrentDate().getDate();
-    
-    const dayDifference = currentDay - day;
-
-    return dayDifference;
-}
-
-const getDaysToMonthEnd = (month, days) => {
-    const daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-    
-    if(isLeapYear(year)) {
-        daysInMonths[1] = 29;
-    }
-
-    const monthDays = daysInMonths[month - 1];
-    const daysToMonthEnd = monthDays - days;
-
-    return daysToMonthEnd;
-}
+let yearDifference = 0;
+let monthDifference = 0;
+let dayDifference = 0;
 
 const fillFields = (...dateDifferences) => {
     const FIELD_IDS = ["day", "month", "year"];
 
     for(let i = 0; i < FIELD_IDS.length; i++) {
-        let fieldId= FIELD_IDS[i];
+        let fieldId = FIELD_IDS[i];
         document.getElementById(`${fieldId}`).innerText = dateDifferences[i];
     }
 }
@@ -85,4 +45,3 @@ cardButton.addEventListener("click", () => {
     calculateDate();
     fillFields(dayDifference, monthDifference, yearDifference);
 });
-
