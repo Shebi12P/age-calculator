@@ -7,5 +7,4 @@ export const changeFormGroupStyle = (inputName, hasError) => {
     else {
         formGroup.setAttribute("data-valid-data", "true");
     }
-    
 }

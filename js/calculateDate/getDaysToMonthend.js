@@ -1,14 +1,16 @@
 import { isLeapYear } from "./isLeapYear.js";
+import { daysInMonths } from "../variables/daysInMonths.js";
 
-export const getDaysToMonthEnd = (month, days) => {
-    const daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-    
+export const getDaysToMonthEnd = (days, month, year) => {
+    const FEBRUARY_INDEX = 1;
+    const monthIndex = month - 1;
+
     if(isLeapYear(year)) {
-        daysInMonths[1] = 29;
+        daysInMonths[FEBRUARY_INDEX] = 29;
     }
 
-    const monthDays = daysInMonths[month - 1];
-    const daysToMonthEnd = monthDays - days;
+    const totaldaysInMonth = daysInMonths[monthIndex];
+    const daysToMonthEnd = totaldaysInMonth - days;
 
     return daysToMonthEnd;
 }
