@@ -3,6 +3,8 @@ export const fillDateDifferences = (dateDifferences) => {
 
     for(let i = 0; i < FIELD_IDS.length; i++) {
         let fieldId = FIELD_IDS[i];
-        document.getElementById(`${fieldId}`).innerText = dateDifferences[i];
+        let dateDifference = dateDifferences[i]
+
+        document.getElementById(`${fieldId}`).innerText = dateDifference;
     }
 }

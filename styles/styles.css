@@ -135,6 +135,7 @@ body {
     font-size: .75rem;
     font-weight: 700;
 }
+
 .error-message {
     min-height: 16px;
     margin-top: .25rem;
@@ -156,10 +157,11 @@ body {
     justify-content: center;
 }
 
+
 .line-break {
     border: 0;
     border-top: 1px solid var(--smokey-grey);
-    margin: 1em 0;
+    margin: 1rem 0;
 }
 
 .card-button {

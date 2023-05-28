@@ -6,7 +6,7 @@ export const isLeapYear = (year) => {
         isLeapYear = true;
     }
 
-    //If a year is a date that don't start a new century(1800, 1900, 2000 etc.) and is dividable by 4 then the year is a leap one
+    //If a year is a date that doesn't start a new century(1800, 1900, 2000 etc.) and is dividable by 4 then the year is a leap one
     if(year % 100 !== 0 && year % 4 === 0) {
         isLeapYear = true;
     }
