@@ -6,8 +6,8 @@ import { getYearDifference } from "./getYearDifference.js";
 import { formFields} from "../variables/formFields.js";
 
 
-export const calculateDate = () => {
-    const {dayField, monthField, yearField} = formFields;
+export const calculateDateDifference = () => {
+    const { dayField, monthField, yearField } = formFields;
     
     const inputDay = dayField.value;
     const inputMonth = monthField.value;

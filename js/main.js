@@ -1,13 +1,15 @@
-import { calculateDate } from "./calculateDate/index.js";
+import { calculateDateDifference } from "./calculateDate/calculateDateDifference.js";
 import { fillDateDifferences } from "./utils/fillDateDifferences.js";
-import { checkEmptyFields } from "./formValidation/checkEmptyFields.js";
-import { checkSpaces } from "./formValidation/checkSpaces.js";
+import { validateForm } from "./formValidation/validateForm.js";
 
 const cardButton = document.querySelector(".card-button");
 
 cardButton.addEventListener("click", () => {
-    checkEmptyFields();
-    checkSpaces();
-    const dateDifferences = calculateDate();
+    
+    if(validateForm() === true) {
+        return;
+    }
+    
+    const dateDifferences = calculateDateDifference();
     fillDateDifferences(dateDifferences);
 });

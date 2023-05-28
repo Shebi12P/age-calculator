@@ -1,4 +1,11 @@
-export const changeFormGroupStyle = (label, field, {labelStyle, fieldStyle}) => {
-    label.style.setProperty("color", `${labelStyle}`);
-    field.style.setProperty("outline", `${fieldStyle}`);
+export const changeFormGroupStyle = (inputName, hasError) => {
+    const formGroup = document.getElementById(`${inputName}-group`);
+
+    if(hasError) {
+        formGroup.setAttribute("data-valid-data", "false");
+    }
+    else {
+        formGroup.setAttribute("data-valid-data", "true");
+    }
+    
 }
