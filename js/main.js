@@ -7,6 +7,7 @@ const cardButton = document.querySelector(".card-button");
 cardButton.addEventListener("click", () => {
     
     if(validateForm() === true) {
+        fillDateDifferences(["--", "--", "--"])
         return;
     }
     
