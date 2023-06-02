@@ -1,41 +1,40 @@
-import { daysInMonths } from "../variables/daysInMonths.js";
 import { formInputs } from "../variables/formInputs.js";
-import { isLeapYear } from "../calculateDate/isLeapYear.js";
-import { changeErrorMessage } from "../utils/changeErrorMessage.js";
-import { changeFormGroupStyle } from "../utils/changeFormGroupStyle.js";
-import { getInputName } from "../utils/getinputName.js";
+import { checkForInvalidCharacters } from "./checkForInvalidCharacters.js";
 
 export const checkForInvalidDay = () => {
     let isInvalidDay = false;
-    let errorMessage = "";
     
     const { dayInput, monthInput, yearInput } = formInputs;
-    const dayInputName = getInputName(dayInput);
-    const dayNumber = parseInt(dayInput.value);
+    let dayNumber = dayInput.value;
+
+    if (isNaN(dayNumber)) {
+        isInvalidDay = true;
+    }
+
+    if(checkForInvalidCharacters(dayNumber)) {
+        isInvalidDay = true;
+    }
+
     const monthNumber = parseInt(monthInput.value);
     const yearNumber = parseInt(yearInput.value);
+    dayNumber = parseInt(dayNumber);
 
-    if (dayNumber < 1 || isNaN(monthNumber)) {
+    if(dayNumber < 1) {
         isInvalidDay = true;
     }
 
-    if(isLeapYear(yearNumber)) {
-        const februaryIndex = 1;
+    // if(isLeapYear(yearNumber)) {
+    //     const februaryIndex = 1;
         
-        daysInMonths[februaryIndex] = 29;
-    }
+    //     daysInMonths[februaryIndex] = 29;
+    // }
 
-    const monthIndex = monthNumber - 1;
-    let totaldaysInMonth = daysInMonths[monthIndex];
+    // const monthIndex = monthNumber - 1;
+    // let totaldaysInMonth = daysInMonths[monthIndex];
 
-    if(dayNumber > totaldaysInMonth) {
-        isInvalidDay = true;
-    }
-
-    if(isInvalidDay) errorMessage = "Must be a valid day";
-
-    changeFormGroupStyle(dayInputName, isInvalidDay);
-    changeErrorMessage(errorMessage, dayInputName, isInvalidDay);
+    // if(dayNumber > totaldaysInMonth) {
+    //     isInvalidDay = true;
+    // }
 
     return isInvalidDay;
 } 

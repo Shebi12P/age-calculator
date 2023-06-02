@@ -30,7 +30,7 @@ export const calculateDateDifference = () => {
         dayDifference = getDaysToMonthEnd(dayInputValue, monthInputValue, yearInputValue) + currentDay;
     }
 
-    if (dayDifference < 0 && monthDifference <= 0) {
+    if (dayDifference < 0 && monthDifference == 0) {
         yearDifference = yearDifference - 1;
         dayDifference = getDaysToMonthEnd(monthInputValue, dayInputValue) + currentDay;
     }
