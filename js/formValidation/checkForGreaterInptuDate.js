@@ -1,5 +1,4 @@
 import { formInputs } from "../variables/formInputs.js";
-import { getCurrentDate } from "../calculateDate/getCurrentDate.js";
 
 export const checkForGreaterInptuDate = () => {
     let inputDateIsGreater = false;

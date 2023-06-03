@@ -67,8 +67,10 @@ body {
     
     /* For centering only */
     min-height: 100vh;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .card {
@@ -76,15 +78,16 @@ body {
     border-radius: .5rem;
     border-bottom-right-radius: 8rem;
     padding: 2rem;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
 }
 
 .form {
-    display: flex;
-    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+   display: flex;
+   gap: 1.5rem;
+   width: 100%;
 }
 
 .form-group {
@@ -98,7 +101,7 @@ body {
     color: var(--off-black);
     font-size: 32px;
     font-weight: 800;
-    max-width: 10rem;
+    max-width: 12rem;
     padding: .75rem;
     border-radius: .25rem;
     outline: none;
@@ -141,6 +144,7 @@ body {
     margin-top: .25rem;
     user-select: none;
 }
+
 .error-message[aria-hidden="true"]{
     opacity: 0;
 }
@@ -155,8 +159,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 1rem;
 }
-
 
 .line-break {
     border: 0;
@@ -190,4 +194,14 @@ body {
 
 .date span {
     color: var(--clr-purple);
+}
+
+
+@media (max-width: 780px) {
+    .input-group {
+        flex-direction: column;
+        gap: .5rem;
+        justify-content: center;
+        align-items: center;
+    }
 }
