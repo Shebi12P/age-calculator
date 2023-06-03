@@ -37,7 +37,6 @@ export const calculateDateDifference = () => {
 
     //If it's a date that only exists in a leap year then the day difference is 1 day bigger
     if (dayInput === 29 && monthInputValue === 2) {
-
         dayDifference = dayDifference + 1;
     }
 

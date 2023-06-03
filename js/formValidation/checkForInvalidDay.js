@@ -23,18 +23,5 @@ export const checkForInvalidDay = () => {
         isInvalidDay = true;
     }
 
-    // if(isLeapYear(yearNumber)) {
-    //     const februaryIndex = 1;
-        
-    //     daysInMonths[februaryIndex] = 29;
-    // }
-
-    // const monthIndex = monthNumber - 1;
-    // let totaldaysInMonth = daysInMonths[monthIndex];
-
-    // if(dayNumber > totaldaysInMonth) {
-    //     isInvalidDay = true;
-    // }
-
     return isInvalidDay;
 } 
