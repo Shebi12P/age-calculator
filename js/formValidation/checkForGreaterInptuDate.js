@@ -10,7 +10,7 @@ export const checkForGreaterInptuDate = () => {
     const yearNumber = yearInput.value;
     const inputDate = new Date(yearNumber, monthNumber-1, dayNumber).getTime();
 
-    const currentDate = getCurrentDate().getTime();
+    const currentDate = new Date().getTime();
 
     if(inputDate > currentDate) {
         inputDateIsGreater = true;

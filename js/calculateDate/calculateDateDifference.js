@@ -13,7 +13,7 @@ export const calculateDateDifference = () => {
     const dayInputValue = parseInt(dayInput.value);
     const monthInputValue = parseInt(monthInput.value);
     const yearInputValue = parseInt(yearInput.value);
-    const currentDay = getCurrentDate().getDate();
+    const currentDay = new Date().getDate();
     
     let yearDifference = getYearDifference(yearInputValue);
     let monthDifference = getMonthDifference(monthInputValue);

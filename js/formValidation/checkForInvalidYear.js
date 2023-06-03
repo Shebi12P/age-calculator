@@ -18,7 +18,7 @@ export const checkForInvalidYear = () => {
         isInvalidYear = true;
     }
 
-    const currentYear = getCurrentDate().getFullYear();
+    const currentYear = new Date().getFullYear();
 
     if(yearNumber < 1 || yearNumber > currentYear) {
         isInvalidYear = true;

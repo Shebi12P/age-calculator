@@ -1,7 +1,5 @@
-import { getCurrentDate } from "./getCurrentDate.js";
-
 export const getDayDifference = (day) => {
-    const currentDay = getCurrentDate().getDate();
+    const currentDay = new Date().getDate();
     
     const dayDifference = currentDay - day;
 
