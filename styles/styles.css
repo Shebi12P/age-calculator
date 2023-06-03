@@ -196,7 +196,6 @@ body {
     color: var(--clr-purple);
 }
 
-
 @media (max-width: 780px) {
     .input-group {
         flex-direction: column;
