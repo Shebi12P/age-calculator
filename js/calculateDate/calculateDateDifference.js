@@ -4,7 +4,6 @@ import { getMonthDifference } from "./getMonthDifference.js";
 import { getYearDifference } from "./getYearDifference.js";
 import { formInputs } from "../variables/formInputs.js";
 
-
 export const calculateDateDifference = () => {
     const { dayInput, monthInput, yearInput } = formInputs;
     const MONTHS_IN_YEAR = 12;

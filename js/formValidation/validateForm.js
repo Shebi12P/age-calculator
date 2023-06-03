@@ -84,7 +84,5 @@ export const validateForm = () => {
         changeErrorMessage(errorMessage, dayInputName, inputDayIsGreaterThanTotalDaysInMonth);
     }
 
-    
-
     return hasError;
 }
