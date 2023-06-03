@@ -1,4 +1,3 @@
-import { getCurrentDate } from "./getCurrentDate.js";
 import { getDayDifference } from "./getDayDifference.js";
 import { getDaysToMonthEnd } from "./getDaysToMonthend.js";
 import { getMonthDifference } from "./getMonthDifference.js";

@@ -1,7 +1,6 @@
 import { getInputName } from "../utils/getinputName.js";
 import { checkForInvalidCharacters } from "./checkForInvalidCharacters.js";
 import { formInputs } from "../variables/formInputs.js";
-import { getCurrentDate } from "../calculateDate/getCurrentDate.js";
 
 export const checkForInvalidYear = () => {
     let isInvalidYear = false;
