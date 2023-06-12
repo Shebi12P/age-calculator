@@ -28,7 +28,6 @@ Users should be able to:
 - assets
   - fonts - contains all the fonts used on the site
   - images- contains all the images, icons and svgs used on the site
-- design - contains all the images showing the desing provided by the author of the challenge
 - js
   - calculateDate - contains all the functions that operate on dates
   - formValidation - contains all the functions that are used for validating the inputs
